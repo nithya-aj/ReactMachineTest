@@ -1,4 +1,8 @@
 import user from "../../../UI/Assets/Rectangle 10.png";
+import DataTable from "../Components/DataTable";
+import LineChart from "../Components/LineChart";
+import PieChart from "../Components/PieChart";
+import UserCard from "../Components/UserCard";
 
 const Homepage = () => {
   const currentTime = new Date().getHours();
@@ -12,7 +16,7 @@ const Homepage = () => {
     message = "Good evening! 🌇";
   }
   return (
-    <div className="p-8 h-full flex flex-col">
+    <div className="p-9 pt-3 h-full flex flex-col gap-2">
       <div className=" flex items-center justify-between h-14 ">
         <div className="text-black font-medium flex items-center ">
           {message}
@@ -29,7 +33,24 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <div className="">Home</div>
+      <div className="flex flex-col h-full pr-14 gap-4">
+        <div className="grid grid-cols-3 h-[55%] gap-6">
+          <div className="col-span-2">
+            <LineChart />
+          </div>
+          <div>
+            <PieChart />
+          </div>
+        </div>
+        <div className="grid grid-cols-5 h-[45%] gap-3">
+          <div className="col-span-4">
+            <DataTable />
+          </div>
+          <div className="col-span-1">
+            <UserCard />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
