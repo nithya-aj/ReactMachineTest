@@ -54,7 +54,7 @@ const DataTable = () => {
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="rounded-sm p-2 h-7 flex items-center bg-white text-black"
+          className="rounded-sm p-2 h-7 flex items-center bg-white text-gray-400"
         >
           <FaChevronLeft />
         </button>
@@ -74,7 +74,7 @@ const DataTable = () => {
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="rounded-sm p-2 h-7 flex items-center bg-white text-black "
+          className="rounded-sm p-2 h-7 flex items-center bg-white text-gray-400 "
         >
           <FaChevronLeft className="rotate-180" />
         </button>

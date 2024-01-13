@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Briefcase from "../../../UI/Assets/Briefcase.png";
 import StatBoard from "../../../UI/Assets/StatBoard.png";
 import Circled_Menu from "../../../UI/Assets/Circled Menu.png";
