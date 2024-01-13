@@ -9,8 +9,9 @@ import Shutdown from "../../../UI/Assets/Shutdown.png";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import { FcBriefcase } from "react-icons/fc";
 import { RiShutDownLine } from "react-icons/ri";
+import { useEffect } from "react";
 
-const Sidebar = ({ isOpen, handleSidebar }) => {
+const Sidebar = ({ isOpen, setIsOpen, handleSidebar }) => {
   const items = [
     {
       name: "Dashboard",
@@ -29,6 +30,19 @@ const Sidebar = ({ isOpen, handleSidebar }) => {
       img: Help,
     },
   ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsOpen(window.innerWidth >= 1360);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [setIsOpen]);
 
   return isOpen ? (
     <div className="flex flex-col relative">

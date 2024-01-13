@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="bg-primary h-screen flex ">
       <div className={` bg-secondary h-full ${isOpen ? "w-[14%]" : "w-[5%]"} `}>
-        <Sidebar isOpen={isOpen} handleSidebar={handleSidebar} />
+        <Sidebar isOpen={isOpen} handleSidebar={handleSidebar} setIsOpen={setIsOpen} />
       </div>
       <div className={` ${isOpen ? "w-[86%]" : "w-[95%]"} `}>
         <Homepage />
