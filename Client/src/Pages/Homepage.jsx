@@ -34,8 +34,8 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col h-full pr-14 gap-4">
-        <div className="h-[55%] flex gap-3 ">
+      <div className="flex flex-col h-full pr-14 gap-2">
+        <div className="h-[52%] flex gap-3 ">
           <div className="w-[70%]">
             <LineChartCmp />
           </div>
@@ -43,11 +43,11 @@ const Homepage = () => {
             <PieChartCmp />
           </div>
         </div>
-        <div className="grid grid-cols-5 h-[45%] gap-3">
-          <div className="col-span-4">
+        <div className="flex h-[47%] gap-3">
+          <div className="w-[80%]">
             <DataTable />
           </div>
-          <div className="col-span-1">
+          <div className="w-[20%]">
             <UserCard />
           </div>
         </div>

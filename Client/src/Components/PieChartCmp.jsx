@@ -33,11 +33,11 @@ const PieChartCmp = () => {
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-      <div className="flex flex-col pl-3 gap-1 h-3">
+      <div className="flex flex-col pl-8 gap-1 h-3">
         {data.map((item, id) => (
           <div key={id} className="flex items-center mb-2">
             <div
-              className="h-2 w-2 mr-2"
+              className="h-3 w-3 mr-2 rounded-full"
               style={{ backgroundColor: COLORS[id] }}
             ></div>
             <p className="flex items-center">{item.name}</p>
