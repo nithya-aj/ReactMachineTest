@@ -1,14 +1,19 @@
+import { useState } from "react";
 import "./App.css";
 import Sidebar from "./Components/Sidebar";
 import Homepage from "./Pages/Homepage";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(true);
+  const handleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className="bg-primary h-screen flex ">
-      <div className="w-[14%] bg-secondary h-full">
-        <Sidebar />
+      <div className={` bg-secondary h-full ${isOpen ? "w-[14%]" : "w-[5%]"} `}>
+        <Sidebar isOpen={isOpen} handleSidebar={handleSidebar} />
       </div>
-      <div className="w-[86%] h-full">
+      <div className={` ${isOpen ? "w-[86%]" : "w-[95%]"} `}>
         <Homepage />
       </div>
     </div>

@@ -1,7 +1,7 @@
 import user from "../../../UI/Assets/Rectangle 10.png";
 import DataTable from "../Components/DataTable";
-import LineChart from "../Components/LineChart";
-import PieChart from "../Components/PieChart";
+import LineChartCmp from "../Components/LineChartCmp";
+import PieChartCmp from "../Components/PieChartCmp";
 import UserCard from "../Components/UserCard";
 
 const Homepage = () => {
@@ -15,6 +15,7 @@ const Homepage = () => {
   } else {
     message = "Good evening! 🌇";
   }
+
   return (
     <div className="p-9 pt-3 h-full flex flex-col gap-2">
       <div className=" flex items-center justify-between h-14 ">
@@ -34,12 +35,12 @@ const Homepage = () => {
         </div>
       </div>
       <div className="flex flex-col h-full pr-14 gap-4">
-        <div className="grid grid-cols-3 h-[55%] gap-6">
-          <div className="col-span-2">
-            <LineChart />
+        <div className="h-[55%] flex gap-3 ">
+          <div className="w-[70%]">
+            <LineChartCmp />
           </div>
-          <div>
-            <PieChart />
+          <div className="w-[30%]">
+            <PieChartCmp />
           </div>
         </div>
         <div className="grid grid-cols-5 h-[45%] gap-3">

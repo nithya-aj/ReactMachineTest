@@ -5,7 +5,11 @@ import Support from "../../../UI/Assets/Support.png";
 import Plugins from "../../../UI/Assets/Puzzle.png";
 import Help from "../../../UI/Assets/Help.png";
 import Shutdown from "../../../UI/Assets/Shutdown.png";
-const Sidebar = () => {
+import { MdOutlineDoubleArrow } from "react-icons/md";
+import { FcBriefcase } from "react-icons/fc";
+import { RiShutDownLine } from "react-icons/ri";
+
+const Sidebar = ({ isOpen, handleSidebar }) => {
   const items = [
     {
       name: "Dashboard",
@@ -25,18 +29,24 @@ const Sidebar = () => {
     },
   ];
 
-  return (
-    <div className="flex flex-col ">
-      <div className="flex flex-col items-center justify-center h-2/6 ">
+  return isOpen ? (
+    <div className="flex flex-col relative">
+      <div
+        className={`flex justify-end left-48 text-2xl text-white h-10 p-3 cursor-pointer `}
+      >
+        <MdOutlineDoubleArrow className="rotate-180" onClick={handleSidebar} />
+      </div>
+      <div className="flex flex-col h-1/6 relative items-center justify-center  ">
         <img src={Briefcase} alt="" />
         <img src={StatBoard} alt="" />
       </div>
       <div className="flex flex-col h-full">
-        <div className="w-full flex flex-col gap-5 items-end pt-12">
-          {items.map((item) => {
+        <div className="w-full flex flex-col gap-5 items-end pt-24">
+          {items.map((item, id) => {
             return (
               <>
                 <div
+                  key={id}
                   className={`flex items-center gap-3 h-10 w-10/12 px-3 rounded-l-lg hover:text-black hover:bg-white cursor-pointer duration-500 ${
                     item.name === "Dashboard"
                       ? "bg-white text-black"
@@ -53,6 +63,40 @@ const Sidebar = () => {
         <div className="h-12 flex items-center w-full bg-white text-red-500 justify-center gap-2">
           <p className="flex items-center">Logout</p>
           <img src={Shutdown} alt="" />
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div className="flex flex-col relative">
+      <div
+        className={`flex justify-end left-48 text-white h-10 px-1 cursor-pointer `}
+      >
+        <MdOutlineDoubleArrow onClick={handleSidebar} />
+      </div>
+      <div className="flex flex-col h-[5%] relative items-center text-4xl ">
+        <FcBriefcase />
+      </div>
+      <div className="flex flex-col h-full">
+        <div className="w-full flex flex-col items-center gap-5 pt-[10rem] ">
+          {items.map((item, id) => {
+            return (
+              <>
+                <div
+                  key={id}
+                  className={`flex items-center gap-3 h-10 w-10 px-3 rounded-lg hover:text-black hover:bg-white cursor-pointer duration-500 ${
+                    item.name === "Dashboard"
+                      ? "bg-white text-black"
+                      : "bg-[#1a1f30] text-white"
+                  } `}
+                >
+                  <img src={item.img} alt="" />
+                </div>
+              </>
+            );
+          })}
+        </div>
+        <div className="h-12 flex items-center w-full bg-white text-red-500 justify-center gap-2">
+          <RiShutDownLine />
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import twitter from "../../../UI/Assets/twitter.png";
 
 const UserCard = () => {
   return (
-    <div className="shadow-lg border">
+    <div className="shadow-lg border bg-white rounded-xl">
       <div className={`h-2/3`}>
         <img src={profile} alt="" className="h-full w-full " />
       </div>
