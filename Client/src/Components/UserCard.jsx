@@ -7,7 +7,7 @@ const UserCard = () => {
   return (
     <div className="shadow-lg border bg-white rounded-xl">
       <div className={`h-2/3`}>
-        <img src={profile} alt="" className="h-full w-full " />
+        <img src={profile} alt="" className="h-full w-full" />
       </div>
       <div className="h-1/3 flex flex-col items-center ">
         <p className="font-semibold text-[12px] flex items-center">John Doe</p>

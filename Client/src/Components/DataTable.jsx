@@ -52,7 +52,9 @@ const DataTable = ({ data }) => {
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="rounded-sm p-2 h-7 flex items-center bg-white text-gray-400"
+          className={`rounded-sm p-2 h-7 flex items-center bg-white text-gray-400 ${
+            currentPage === 1 ? "bg-gray-300 text-white" : ""
+          } `}
         >
           <FaChevronLeft />
         </button>
@@ -72,7 +74,7 @@ const DataTable = ({ data }) => {
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="rounded-sm p-2 h-7 flex items-center bg-white text-gray-400 "
+          className={`rounded-sm p-2 h-7 flex items-center bg-white text-gray-400 ${currentPage === totalPages ? 'bg-gray-300 text-white' : ''} `}
         >
           <FaChevronLeft className="rotate-180" />
         </button>

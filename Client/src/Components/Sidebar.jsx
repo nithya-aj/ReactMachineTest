@@ -75,7 +75,7 @@ const Sidebar = ({ isOpen, setIsOpen, handleSidebar }) => {
             );
           })}
         </div>
-        <div className="h-12 flex items-center w-full bg-white text-red-500 justify-center gap-2">
+        <div className="h-12 flex items-center w-full bg-white text-red-500 justify-center gap-2 cursor-pointer">
           <p className="flex items-center">Logout</p>
           <img src={Shutdown} alt="" />
         </div>
