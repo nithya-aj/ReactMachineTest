@@ -6,7 +6,7 @@ This project is a comprehensive dashboard designed to provide users with a seaml
 
 ## Demo
 
-https://github.com/nithya-aj/ReactMachineTest/blob/main/Client/src/assets/demo.png
+![](https://github.com/nithya-aj/ReactMachineTest/blob/main/Client/src/assets/demo.png)
 
 
 ## Features
