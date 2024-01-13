@@ -1,14 +1,7 @@
+/* eslint-disable react/prop-types */
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
-const PieChartCmp = () => {
-  const data = [
-    { name: "Category A", value: 30 },
-    { name: "Category B", value: 20 },
-    { name: "Category C", value: 15 },
-    { name: "Category D", value: 25 },
-    { name: "Category E", value: 10 },
-  ];
-
+const PieChartCmp = ({ data }) => {
   const COLORS = ["#67c587", "#88d1a1", "#a9deba", "#c9ead4", "#eaf6ed"];
 
   return (
@@ -40,7 +33,7 @@ const PieChartCmp = () => {
               className="h-3 w-3 mr-2 rounded-full"
               style={{ backgroundColor: COLORS[id] }}
             ></div>
-            <p className="flex items-center">{item.name}</p>
+            <p className="flex items-center">{item.label}</p>
           </div>
         ))}
       </div>

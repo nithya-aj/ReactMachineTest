@@ -1,15 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 
-const DataTable = () => {
-  const data = [
-    { id: 1, name: "Item 1", quantity: 10, price: 20 },
-    { id: 2, name: "Item 2", quantity: 15, price: 25 },
-    { id: 3, name: "Item 3", quantity: 8, price: 15 },
-    { id: 4, name: "Item 4", quantity: 12, price: 30 },
-    { id: 5, name: "Item 5", quantity: 18, price: 22 },
-  ];
-
+const DataTable = ({ data }) => {
   const itemsPerPage = 4;
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,7 +31,12 @@ const DataTable = () => {
           </thead>
           <tbody>
             {paginatedData.map((item) => (
-              <tr key={item.id} className="h-[1rem]">
+              <tr
+                key={item.id}
+                className={`h-[1rem] ${
+                  item.id % 2 === 1 ? "bg-gray-100" : ""
+                } `}
+              >
                 <td className="border text-left px-4 h-[1rem]">{item.id}</td>
                 <td className="border text-left px-4 h-[1rem]">{item.name}</td>
                 <td className="border text-left px-4 h-[1rem]">
